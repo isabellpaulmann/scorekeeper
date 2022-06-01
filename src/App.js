@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Button from "./Button";
+import Player from "./Player";
+import PlayerForm from "./PlayerForm";
+import { players } from "./playerData";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Scorekeeper version A</h1>
+      <main className="playerContainer">
+        {players.map((player) => (
+          <Player
+            key={player.id}
+            playerDetails={player}
+            playerScore={player.score}
+          />
+        ))}
+      </main>
+      <Button text="Reset scores" />
+      <Button text="Reset all" />
+      <PlayerForm />
     </div>
   );
 }

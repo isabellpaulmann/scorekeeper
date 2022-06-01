@@ -1,0 +1,14 @@
+#heading {
+  color: white;
+  margin-top: 3rem;
+  font-family: "Pacifico", cursive;
+  font-size: 2em;
+}
+
+#name {
+  padding: 15px 60px;
+  box-shadow: 1px 1px 15px black;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 5em;
+}

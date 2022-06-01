@@ -1,0 +1,36 @@
+.Name__score {
+  display: grid;
+  grid-template-areas: "a b ";
+  align-items: center;
+  justify-self: center;
+  gap: 15px;
+  background-color: rgb(73, 94, 53, 0.7);
+  margin: 2rem;
+  box-shadow: 1px 1px 15px black;
+  padding: 20px;
+  font-size: 1.4rem;
+  font-family: "Arvo", serif;
+  color: white;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
+
+.button1 {
+  background-color: #60703b;
+  border: 2px solid white;
+  padding: 10px 15px;
+  box-shadow: 1px 1px 15px black;
+  border-radius: 5px;
+}
+.button2 {
+  background-color: #60703b;
+  border: 2px solid white;
+  padding: 10px 14px;
+  box-shadow: 1px 1px 15px black;
+  border-radius: 5px;
+}
+.Name__buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
