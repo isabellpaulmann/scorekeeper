@@ -1,8 +1,8 @@
-.Name__score {
+.Player__score {
   display: grid;
   grid-template-areas: "a b ";
   align-items: center;
-  justify-self: center;
+  justify-self: left;
   gap: 15px;
   background-color: rgb(73, 94, 53, 0.7);
   margin: 2rem;
@@ -29,8 +29,15 @@
   box-shadow: 1px 1px 15px black;
   border-radius: 5px;
 }
-.Name__buttons {
+.Player__buttons {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 15px;
+  margin-right: 7px;
+}
+
+.Player__score--number {
+  width: 25px;
+  margin: 0;
 }
