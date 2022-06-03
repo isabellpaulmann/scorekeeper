@@ -8,7 +8,7 @@ export default function PlayerForm({ onCreatePlayer }) {
     const newPlayer = { name: name.value, score: 0 };
     onCreatePlayer(newPlayer);
     form.reset();
-    name.focus();
+    window.scrollTo(0, 0);
   }
   return (
     <form
