@@ -1,4 +1,4 @@
-import "./PlayerForm.css";
+import styled from "styled-components";
 
 export default function PlayerForm({ onCreatePlayer }) {
   function activateSubmit(event) {
@@ -11,15 +11,59 @@ export default function PlayerForm({ onCreatePlayer }) {
     window.scrollTo(0, 0);
   }
   return (
-    <form
-      className="Formular"
-      aria-labelledby="heading"
-      onSubmit={activateSubmit}
-    >
+    <SubmitFormular aria-labelledby="heading" onSubmit={activateSubmit}>
       <h2 id="heading">Add player:</h2>
       <label htmlFor="name"></label>
       <input type="text" id="name" name="name"></input>
-      <button className="submitButton">Submit</button>
-    </form>
+      <SubmitButton>Submit</SubmitButton>
+    </SubmitFormular>
   );
 }
+const SubmitFormular = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  #heading {
+    color: white;
+    margin-top: 3rem;
+    font-family: "Pacifico", cursive;
+    font-size: 1.7em;
+  }
+
+  #name {
+    padding: 15px 50px;
+    padding-bottom: 15px;
+    box-shadow: 1px 1px 15px black;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    font-family: "Arvo", serif;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  #name:focus {
+    outline: 4px solid #b53737;
+  }
+`;
+
+const SubmitButton = styled.button`
+  background-color: rgb(60, 89, 64, 0.7);
+  padding: 10px 30px;
+  color: white;
+  font-size: 1.2em;
+  font-family: "Arvo", serif;
+  box-shadow: 1px 1px 15px black;
+  border-radius: 6px;
+  border: none;
+  margin: 20px;
+  width: 200px;
+  margin-bottom: 40px;
+  margin-top: 15px;
+
+  &:hover {
+    box-shadow: 1px 1px 25px black;
+  }
+`;
