@@ -1,5 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Maven+Pro&family=Pacifico&display=swap");
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyles = createGlobalStyle`
 * {
+  
   box-sizing: border-box;
 }
 
@@ -87,11 +90,6 @@ body {
   background-size: 100px 50px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 h1 {
   font-family: "Pacifico", cursive;
   font-size: 2.1em;
@@ -103,7 +101,11 @@ h1 {
   text-shadow: 1px 1px 10px black;
   margin-bottom: 2em;
 }
+
 ul {
   list-style: none;
   padding: 0;
 }
+
+`;
+export default GlobalStyles;

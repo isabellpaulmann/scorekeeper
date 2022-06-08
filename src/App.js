@@ -1,11 +1,13 @@
-import "./App.css";
 import Button from "./Button";
 import Player from "./Player";
 import PlayerForm from "./PlayerForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getFromLocal, setToLocal } from "./localStorage";
+import styled from "styled-components";
 
 function App() {
-  const [players, setPlayers] = useState([]);
+  const [players, setPlayers] = useState(getFromLocal("players") ?? []);
+  useEffect(() => setToLocal("players", players), [players]);
 
   function createPlayer(player) {
     setPlayers([...players, player]);
@@ -47,9 +49,9 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <AppContainer>
       <h1>Scorekeeper version A</h1>
-      <main className="playerContainer">
+      <main>
         {players.map((player, index) => (
           <Player
             key={player.name}
@@ -63,8 +65,12 @@ function App() {
       <Button onClick={resetScores} text="Reset scores" />
       <Button onClick={resetPlayers} text="New game" />
       <PlayerForm onCreatePlayer={createPlayer} />
-    </div>
+    </AppContainer>
   );
 }
 
 export default App;
+
+const AppContainer = styled.div`
+  text-align: center;
+`;
